@@ -1,0 +1,85 @@
+<div class="row" [ngStyle]="{'background-image':'url('+image+')', display: 'block'}">
+
+    <div class="col-12">
+    <div class="container" >
+
+      <h1>{{myValue}}</h1>
+      <h1>{{todayQuote}}</h1>
+      <button (click)="addValue()" type="button" >CLick here </button>
+      <button (click)="updateQuote()" type="button" >Update Quote </button>
+        <div class="row">
+            
+          <div class="col-sm m-2">
+            Products:1
+            <p>Regular Shirts</p>
+            <p>Formal Shirts</p>
+            <p>Casual Shirts</p>
+            <p>Party Wear</p>
+          </div>
+          <div class="col-sm m-2">
+            Products:2
+            <p>Groceries</p>
+            <p>Vegetables</p>
+            <p>Kitchen Product</p>
+            <p>Fruits</p>
+          </div>
+          <div class="col-sm m-2">
+            Products:3
+            <p>Chairs</p>
+            <p>Tables</p>
+            <p>Dining Table</p>
+            <p>Curtens</p>
+          </div>
+          <div class="col-sm m-2">
+            Products:4
+            <p>Biriyani</p>
+            <p>Fried Rice</p>
+            <p>Veg Biriyani</p>
+            <p>Meals</p>
+          </div>
+          
+          <div class="d-flex align-items-start">
+  <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+    <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</button>
+    <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</button>
+    <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</button>
+    <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</button>
+  </div>
+  <div class="tab-content" id="v-pills-tabContent">
+    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">  <div id="product1">
+      <h3>{{"sampleproduct"|sentencecase}}</h3>
+      <P>Price:10000</P>
+      <P>Brands:LONDON</P>
+      <P>Year:2022</P>
+      <P>Year:2022</P>
+      <p>{{myInput|sentencecase}}</p>
+    </div></div>
+    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">  <div id="product1">
+      <h3>My Product 2</h3>
+      <P>Price:10000</P>
+      <P>Brands:ABC</P>
+      <P>Year:2022</P>
+    </div></div>
+    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">  <div id="product1">
+      <h3>Sample Product 3</h3>
+      <P>Price:10000</P>
+      <P>Brands:AK</P>
+      <P>Year:2022</P>
+    </div></div>
+    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab"> <div id="product1">
+      <h3>Sample Product 4</h3>
+      <P>Price:10000</P>
+      <P>Brands:REILEY</P>
+      <P>Year:2022</P>
+    </div></div>
+  </div>
+</div>
+        
+        </div>
+      </div>
+</div>
+<div>
+  {{jsonData|json}}
+</div>
+</div>
+

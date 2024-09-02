@@ -1,0 +1,36 @@
+<div class="container">
+    <h2 class="text-center">Products List</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">S.No</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>                
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of filteredData; let i=index">
+                <th scope="row">{{user.id}}</th>
+                <td>{{user.firstName}}</td>
+                <td>{{user.lastName}}</td>
+                <td>@{{user.userId}}</td>
+            </tr>
+
+        </tbody>
+    </table>
+    <nav aria-label="...">
+        <ul class="pagination">
+            <li class="page-item" style="cursor: pointer;" [ngClass]="{disabled:currentPage==1}">
+                <a class="page-link" (click)="clickedPage(currentPage-1)">Previous</a>
+            </li>
+            <li (click)="clickedPage(page)" *ngFor="let page of pages" class="page-item"
+                [ngClass]="{'active':page==currentPage}"><a class="page-link">{{page}}</a></li>
+
+            <li class="page-item" [ngClass]="{disabled:currentPage==totalPages}" style="cursor: pointer;">
+                <a class="page-link" (click)="clickedPage(currentPage+1)">Next</a>
+            </li>
+        </ul>
+    </nav>
+</div>

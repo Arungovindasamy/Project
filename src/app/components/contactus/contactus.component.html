@@ -1,0 +1,105 @@
+
+
+<div class="container">
+  <div class="row m-3">
+    <div class="col-5 m-1">      
+       <img class="conImage" src="\assets\Images\love-1704052_1280.jpg">
+    
+    </div>
+    <div class="col-5 m-1">
+      <form [formGroup]="userDetailsForm" (ngSubmit)="saveBooking()">
+
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" formControlName="firstName" class="form-control"  id="firstName" aria-describedby="emailHelp" placeholder="Enter First Name"
+            [ngClass]="{'is-invalid':submitted && get_formControls('firstName').errors,
+            'is-valid':submitted && get_formControls('firstName').valid}">
+            <div *ngIf="submitted && get_formControls('firstName').errors?.['required']" class="invalid-feedback">
+              Fullname is required
+            </div>
+          </div>
+           
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" formControlName="lastName" class="form-control" id="lastName"  placeholder="Enter Last Name"
+            [ngClass]="{'is-invalid':submitted && get_formControls('lastName').errors,
+            'is-valid':submitted && get_formControls('lastName').valid}">
+            <div *ngIf="submitted && get_formControls('lastName').errors?.['required']" class="invalid-feedback">
+              Last Name is required
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="dob">DOB</label>
+            <input type="date" formControlName="dob" class="form-control" id="dob"  placeholder="Enter DOB"
+            [ngClass]="{'is-invalid':submitted && get_formControls('dob').errors,
+            'is-valid':submitted && get_formControls('dob').valid}"
+            >
+            <div *ngIf="submitted && get_formControls('dob').errors?.['required']" class="invalid-feedback">
+              DOB is required
+            </div>
+          </div>
+    
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" formControlName="email" class="form-control" id="email"  placeholder="Enter email"
+          [ngClass]="{'is-invalid':submitted && get_formControls('dob').errors,
+            'is-valid':submitted && get_formControls('dob').valid}">
+            <div *ngIf="submitted && get_formControls('email').errors?.['required']" class="invalid-feedback">
+              Email is required
+            </div>
+          <small id="email" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>   
+
+        
+
+        <div formArrayName="address">
+          <div *ngFor="let item of get_formArray('address').controls; let i=index">
+            
+            <div [formGroupName]="i" class="form-group row">
+              
+              <div class="col-2">
+                <label for="street">Street</label>
+                <input type="text" id="street" formControlName="street" class="form-control">
+              </div>
+              <div class="col-2">
+                <label for="taluk">Taluk</label>
+                <input type="text" id="taluk" formControlName="taluk" class="form-control">
+              </div>
+              <div class="col-2">
+                <label for="distric">District</label>
+                <input type="text" id="distric" formControlName="distric" class="form-control">
+              </div>
+              <div class="col-2 ">
+                <label for="pin">Pin Code</label>
+                <input type="text" id="pin" formControlName="pin" class="form-control">
+              </div>
+              <div class="col-2">
+                
+                <span>Remove</span>
+              
+                <button type="button" (click)="deleteAddress(i)" class="btn btn-primary m-1 float-right"><i class="fa fa-trash fa-1x" aria-hidden="true"></i></button>
+              </div>
+
+            </div>
+            
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-5">
+            <button
+              type="button"
+              (click)="pushAddress()"
+              class="btn btn-primary btn-block"
+            >
+              Add address
+            </button>
+          </div>
+        </div>
+       
+        <button type="submit" class="btn btn-primary m-1 float-right">Submit</button>
+        <button type="button buttonReset" (click)="reset()" class="btn btn-primary m-1 float-right">Reset</button>
+      </form>
+    </div>
+  </div>
+</div>
+

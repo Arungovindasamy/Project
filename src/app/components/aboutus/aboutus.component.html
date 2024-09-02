@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+
+        <div class="col-5" id="aboutImage" #hoverElem>
+            <img class="img" src="assets/Images/contact-us.webp">
+        </div>
+        <div class="col-5">
+            <p>One of the leading company in this Sector with none of the negative feedback.We are celebrathing 50 th Anniversary 
+                of our company with 50 Lakhs Clients.They are happy by our Products and recommended our company with the other
+                company.Our Quality of Products made to obtain this place.And then Our company service is good than the other companies.
+                
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-10">
+            <ul>
+                <li *ngFor="let item of paginatedItems">{{ item }}</li>
+              </ul>
+              <button (click)="prevPage()">Prev</button>
+              <button (click)="nextPage()">Next</button>
+        </div>
+    </div>
+</div>
